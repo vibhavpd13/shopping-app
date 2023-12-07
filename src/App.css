@@ -28,6 +28,9 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 .banner-wrapper img{
   height:285px;
@@ -90,7 +93,23 @@
 .review .stars .checked{
   color: orangered
 }
+.myCustomCarousel .slick-dots{
+  display: none !important;
+}
 @media only screen and (max-width:480px){
+  .myCustomCarousel {
+    width: 100%;
+  }
+  .slick-dots li button::before {
+    font-size: 9px;
+  }
+  .myCustomCarousel .slick-dots{
+    display: block !important;
+    top:27px;
+  }
+  .myCustomCarousel .slick-arrow{
+    display: none !important;
+  }
   .card-body img{
     height: 150px;
   }
@@ -114,3 +133,46 @@
   display: none;
   }
 }
+
+.myCustomCarousel {
+  width: 80%;
+  margin-bottom:20px;
+}
+.myCustomCarousel .slick-arrow {
+  color: #070606 !important;
+  border: none;
+  outline: none;
+  background: #242424 !important;
+ 
+}
+.myCustomCarousel h3{
+    font-size: 20px;
+    padding: 4px 12px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    color: black;
+}
+.myCustomCarousel .slick-slide{
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+.myCustomCarousel .slick-arrow{
+  background-color: unset !important;
+}
+.slick-prev {
+  left: 3% !important;
+  z-index: 1;
+}
+.slick-next {
+  right: 3% !important;
+  z-index: 1;
+}
+.slick-prev::before, .slick-next::before{
+  opacity: 1;
+  color:grey !important;
+}
+

@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import { useState } from "react";
 import Pagination from "./components/Pagination";
 import Star from "./components/Star";
+import SliderBanner from "./components/SliderBanner";
 
 export const ORDER_STAGE = {
   PRODUCT: "PRODUCT",
@@ -154,6 +155,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Banner />
+      {/* <SliderBanner/> */}
       <div className="container">
         <div className="row">
           <div className="col-sm-3 mt-3">
