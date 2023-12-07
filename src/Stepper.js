@@ -3,10 +3,21 @@ import { ORDER_STAGE } from "./App";
 const Stepper = (props) =>{
     return(
     <div className="stepper-wrapper d-flex flex-row flex-sm-column align-items-center justify-content-center">
-         <div className="rounded p-2" style={{backgroundColor:props.currentStage === ORDER_STAGE.PRODUCT  ? "black" : "white", color:props.currentStage === ORDER_STAGE.PRODUCT  ? "white" : "black"}}>Product</div>
-        <div className="rounded p-2" style={{backgroundColor:props.currentStage === ORDER_STAGE.REVIEW  ? "black" : "white", color:props.currentStage === ORDER_STAGE.REVIEW  ? "white" : "black"}}>Review</div>
-        <div className="rounded p-2" style={{backgroundColor:props.currentStage === ORDER_STAGE.PAYMENT ? "black" : "white", color:props.currentStage === ORDER_STAGE.PAYMENT ? "white" : "black"}}>Payment</div>
-        <div className="rounded p-2" style={{backgroundColor:props.currentStage === ORDER_STAGE.SUMMARY  ? "black" : "white",color:props.currentStage === ORDER_STAGE.SUMMARY  ? "white" : "black"}}>Summary</div>
+        <div className="position-relative">
+            <div className={`rounded p-1 default-stepper ${props.currentStage === ORDER_STAGE.PRODUCT ? "active-stepper" : ""}`} >Product</div>
+            {props.currentStage === ORDER_STAGE.PRODUCT ? <div className="arrow-step"></div> : ""}
+        </div>
+        <div className="position-relative">
+            <div className={`rounded p-1 default-stepper ${props.currentStage === ORDER_STAGE.REVIEW ? 'active-stepper' : ''}`} >Review</div>
+            {props.currentStage === ORDER_STAGE.REVIEW ? <div className="arrow-step"></div> : ""}
+        </div>
+        <div className="position-relative">
+            <div className={`rounded p-1 default-stepper ${props.currentStage === ORDER_STAGE.PAYMENT ? "active-stepper" : ""}`} >Payment</div>
+            {props.currentStage === ORDER_STAGE.PAYMENT ? <div className="arrow-step"></div> : ""}
+        </div>
+        <div className="position-relative">
+            <div className={`rounded p-1 default-stepper ${props.currentStage === ORDER_STAGE.SUMMARY ? "active-stepper" : ""}`} >Summary</div>
+        </div>
     </div>
     )
 }

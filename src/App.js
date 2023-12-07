@@ -5,6 +5,7 @@ import Banner from "./components/Banner";
 import Navbar from "./components/Navbar";
 import { useState } from "react";
 import Pagination from "./components/Pagination";
+import Star from "./components/Star";
 
 export const ORDER_STAGE = {
   PRODUCT: "PRODUCT",
@@ -138,6 +139,16 @@ function App() {
       
     })
     return totalPrice;
+  };
+
+  const onReviewStar=(stars)=>{
+    setOrderData((prev) => ({
+      ...prev,
+      review: {
+        ...prev.review,
+        stars: stars,
+      },
+    })); 
   }
   return (
     <div className="App">
@@ -169,12 +180,11 @@ function App() {
                 <h4>Review:</h4>
                 <p>Review the selected products and modify</p>
                 <div className="form-group stars">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
+                  {[...Array(5)].map((item,index)=>(
+                      <span className={`fa fa-star ${orderData.review.stars >=index ? "checked":""}`} onClick={()=>onReviewStar(index)}></span>
+                  ))}
                 </div>
+                {/* <Star orderData={orderData}/> */}
                 <div className="form-group">
                   <label>Name</label>
                   <input type="text" className="form-control" name="name" onChange={changeReviewHandle} placeholder="Enter Name"/>

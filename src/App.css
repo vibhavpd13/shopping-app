@@ -1,6 +1,23 @@
 .navbar .logo{
   height:30px
 }
+.navbar .right-side{
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.navbar li a{
+  color: #455A64 !important;
+}
+.navbar .right-side .profile-div{
+  padding: 5px 10px;
+  background: #eeeeee;
+  border-radius: 50%;
+  background-color: #455A64;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+}
 .avatar{
   height:38px;
   width:38px;
@@ -45,7 +62,23 @@
   width: 100%;
 }
 /* //stepper css */
-.stepper-wrapper{
+.stepper-wrapper .arrow-step{
+  left: 50%;
+  height: 25px;
+  position: absolute;
+  border-left: 2px solid #37474F;
+  z-index: 999;
+}
+.stepper-wrapper .default-stepper{
+  background-color: white;
+  color:black;
+  border: 1px solid black;
+  margin-top:25px;
+}
+.stepper-wrapper .active-stepper{
+  background-color: black;
+  color:white;
+  border: 1px solid black;
 }
 .stepper-wrapper div{
     width: 150px;
@@ -67,5 +100,17 @@
   .banner-wrapper .centered-text{
     width:100%;
     
+  }
+  .stepper-wrapper div{
+    width: auto;
+    text-align: center;
+    padding:0 8px
+  }
+  .default-stepper{
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .stepper-wrapper .arrow-step{
+  display: none;
   }
 }
